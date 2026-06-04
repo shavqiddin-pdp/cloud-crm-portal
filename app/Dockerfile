@@ -2,8 +2,10 @@ FROM golang:1.24-alpine
 
 WORKDIR /app
 
-COPY . .
+COPY app/ .
+
+RUN go build -o main .
 
 EXPOSE 8080
 
-CMD [ "go","run", "main.go"]
+CMD ["./main"]
